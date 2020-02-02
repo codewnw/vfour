@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block body %}
+{% if user.groups.all.0.name == 'HR' %}
+<div class="row">
+    <div class="col">
+        <a href="{% url 'jobs:add' %}" class="btn btn-info btn-block">Add new Job</a>
+    </div>
+</div>
+{% endif %}
+
+<br>
+{% for job in job_list %}
+<div class="col-md-12">
+    <div class="row no-gutters border rounded overflow-hidden bg-light text-dark position-relative">
+        <div class="col p-4 position-static">
+            <strong class="d-inline-block mb-2 text-success">
+                <span class="badge badge-primary">Python</span>
+                <span class="badge badge-success">Django</span></strong>
+            <h3 class="mb-0">{{job.title}}</h3>
+            <div class="row">
+                <div class="col">
+                    <div class="mb-1 text-muted"><strong class="mr-2">Last Date:</strong class="mr-2"> Nov 11</div>
+                </div>
+                <div class="col">
+                    <div class="mb-1 text-muted"><strong class="mr-2">Experience:</strong>{{job.experience}} Years</div>
+                </div>
+                <div class="col">
+                    <div class="mb-1 text-muted"><strong class="mr-2">Location:</strong class="mr-2">{{job.location}}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p class="mb-auto">{{job.description}}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <a href="{% url 'jobs:job_detail' pk=job.pk %}" class="btn btn-primary">View</a>
+                    {% if user.groups.all.0.name == 'Candidate' %}
+                    <a href="#" class="btn btn-success">Apply</a>
+                    {% endif %}
+
+                    {% if perms.jobs.change_job %}
+                    <a href="{% url 'jobs:job_update' pk=job.pk %}" class="btn btn-success">Update</a>
+                    {% endif %}
+                    {% if perms.jobs.delete_job %}
+                    <a href="{% url 'jobs:job_delete' pk=job.pk %}" class="btn btn-danger">Delete</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+
+
+
+{% endfor %}
+{% endblock %}

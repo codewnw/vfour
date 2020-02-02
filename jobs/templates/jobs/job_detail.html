@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+<div class="row">
+    <div class="col">
+        <h1>{{job.title}}</h1>
+        <p>{{job.description}}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+
+        <div class="card" style="width: 18rem;">
+            <div class="card-header">
+                HR Contact Details
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Full Name</li>
+                <li class="list-group-item">+91-0987654321</li>
+                <li class="list-group-item">hr@vfour.com</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <a href="#" class="btn btn-success">Apply</a>
+    </div>
+</div>
+{% endblock %}

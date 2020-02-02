@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+<div class="jumbotron">
+    <h1>Logged out</h1>
+    <p>Thanks for spending some quality time with the Web site today.</p>
+</div>
+<a href="{% url 'accounts:login' %}">Login Again</a>
+{% endblock body %}

@@ -1,0 +1,14 @@
+### Django ###
+*.log
+*.pot
+*.pyc
+__pycache__/
+__pycache__/*.*.pyc
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media
+migrations
+
+# Exclude machine-specific vs code settings
+.vscode/settings.json
