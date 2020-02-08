@@ -79,27 +79,27 @@ WSGI_APPLICATION = 'vFour.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'vfour',
-        'USER': 'root',
-        'PASSWORD': "root",
-        'HOST': "127.0.0.1",
-        'PORT': "3306",
-        'OPTIONS': {
-            # 'read_default_file':'C://ProgramData//MySQL//MySQL Server 8.0//my.ini',
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
-        }
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'vfour',
+#         'USER': 'root',
+#         'PASSWORD': "root",
+#         'HOST': "127.0.0.1",
+#         'PORT': "3306",
+#         'OPTIONS': {
+#             # 'read_default_file':'C://ProgramData//MySQL//MySQL Server 8.0//my.ini',
+#             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+#         }
+#     }
+# }
 
 
 # Password validation
