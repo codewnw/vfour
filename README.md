@@ -9,3 +9,7 @@ vFour
 
 * `python manage.py create job_groups_and_permissions` 
 
+## SQL
+
+* `CREATE SCHEMA VFOUR` 
+
