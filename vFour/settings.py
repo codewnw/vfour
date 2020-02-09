@@ -41,8 +41,7 @@ INSTALLED_APPS = [
     'bootstrap4',
     'accounts',
     'jobs',
-    # 'management',
-    # 'management.commands',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -168,3 +167,9 @@ EMAIL_HOST_USER = FROM_EMAIL
 EMAIL_HOST_PASSWORD = '****'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
