@@ -1,0 +1,41 @@
+
+
+{% extends 'pragati/home.html' %}
+
+{% block body %}
+<img height="200" width="100%" src="https://www.goaugment.io/wp-content/uploads/2016/05/New-Software-Idea.jpg" alt="Home_image">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{% url 'pragati:home' %}">Home  |</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="navbar-brand" href="{% url 'pragati:idea' %}">File Your Idea  |</a>
+        <a class="navbar-brand" href="#">Pragati Ideas |</a>
+        <a class="navbar-brand" href="#">My Pragati status  |</a>
+        <a class="navbar-brand" href="#">My Pragati Certificate </a>
+      </div>
+    </div>
+  </nav>
+
+<div class="container mt-4  ">
+    {% for idea in idea_list %}
+    <div class="col-md-12">
+        <div class="row no-gutters border rounded overflow-hidden position-relative">
+            <div class="col p-4 position-static">
+                <h3 class="mb-0">{{idea.idea}}</h3>
+                <div class="mb-auto mt-2"><strong>How it would save time:</strong> {{ idea.save_time|slice:85 }}...</div>
+                <div class="mb-auto mt-2"><strong>How it would save money:</strong> {{ idea.save_money|slice:85 }}...</div>
+                <p class="mb-auto mt-2"><strong>How it wou:ld save effort</strong> {{ idea.save_effort|slice:85}}...</p>
+                <a href="{% url 'pragati:detail' pk=idea.pk %}" class="btn btn-success mt-2">View Details</a>
+                
+                
+            </div>
+        </div>
+    </div>
+    <br>
+    {% endfor %}
+</div>
+{% endblock %}

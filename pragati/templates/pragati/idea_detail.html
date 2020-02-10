@@ -1,0 +1,39 @@
+
+
+{% extends 'pragati/home.html' %}
+
+{% block body %}
+<img height="200" width="100%" src="https://s3.amazonaws.com/media.eremedia.com/uploads/2017/08/ideas-diversity-thought-management-700x467.jpg" alt="Home_image">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{% url 'pragati:home' %}">Home  |</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="navbar-brand" href="{% url 'pragati:idea' %}">File Your Idea  |</a>
+        <a class="navbar-brand" href="{% url 'pragati:list' %}">Pragati Ideas |</a>
+        <a class="navbar-brand" href="#">My Pragati status  |</a>
+        <a class="navbar-brand" href="#">My Pragati Certificate </a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-3">
+  <div class="jumbotron">
+    <div class="row">
+        <div class="col">
+            <h1>{{idea.idea}}</h1>
+            <hr>
+            <p><strong>How it will save time:</strong> {{idea.save_time}}</p>
+            <p><strong>How it will save effort:</strong> {{idea.save_effort}}</p>
+            <p><strong>How it will save money:</strong> {{idea.save_money}}</p>
+
+
+            
+
+        </div>
+    </div>
+</div>
+{% endblock %}

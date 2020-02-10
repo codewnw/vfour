@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+
+{% block body %} 
+<img height="200" width="100%" src="https://s3.amazonaws.com/media.eremedia.com/uploads/2017/08/ideas-diversity-thought-management-700x467.jpg" alt="Home_image">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{% url 'pragati:home' %}">Home  |</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="navbar-brand" href="{% url 'pragati:idea' %}">File Your Idea  |</a>
+        <a class="navbar-brand" href="{% url 'pragati:list' %}">Pragati Ideas |</a>
+        <a class="navbar-brand" href="#">My Pragati status  |</a>
+        <a class="navbar-brand" href="#">My Pragati Certificate </a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-3">
+<div class="jumbotron">
+  <h3 class="display-4">Pragati</h3>
+  <p class="lead">-Is a quality initiative at vFive</p>
+  <p class="lead">-It is used to create a work culture where improvement is a part of everyone's daily life.</p>
+  <p class="lead">Personal development is the process of achieving and expanding your full potential.</p>
+  <p class="lead">I’ve created a collection of some of the most empowering personal development quotes of all time.</p>
+  <hr class="my-4">
+  <p>Your creative idea can change the several people and their lif style.</p>
+  <a class="btn btn-primary btn-lg" href="{% url 'pragati:idea' %}">File Your Idea</a>
+</div>
+<div class="jumbotron">
+  <h1 class="display-4">Hello, world!</h1>
+  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <hr class="my-4">
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+</div>
+</div>
+
+{% endblock %}

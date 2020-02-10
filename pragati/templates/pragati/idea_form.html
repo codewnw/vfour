@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+
+
+{% block body %} 
+<img src="https://www.lls.org/sites/default/files/National/USA/Image/banner/banner-research-new-idea-award.jpg" alt="idea_image" height="250" width="100%">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{% url 'pragati:home' %}">Home  |</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="navbar-brand" href="{% url 'pragati:idea' %}">File Your Idea  |</a>
+        <a class="navbar-brand" href="{% url 'pragati:list' %}">Pragati Ideas |</a>
+        <a class="navbar-brand" href="#">My Pragati status  |</a>
+        <a class="navbar-brand" href="#">My Pragati Certificate </a>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="container mt-1">
+    <div class="cotent-section">
+<form method="POST"> 
+<fieldset class="form-group">
+    <legend class="border-bottom mb-4"> <h2>File Your Idea</h2></legend>
+{% csrf_token %}
+{% bootstrap_form form %}
+</fieldset>
+<div class="form-group">
+<button class="btn btn-success">Submit</button>
+</div>
+{% endblock %}

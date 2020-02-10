@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'bootstrap4',
     'accounts',
     'jobs',
+    'employee',
+    'pragati',
     # 'management',
     # 'management.commands',
 ]

@@ -28,16 +28,17 @@
                         d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94" />
                 </svg>
             </a>
-            <a class="py-2 d-none d-md-inline-block" href="#">Tour</a>
-            <a class="py-2 d-none d-md-inline-block" href="#">Product</a>
-            <a class="py-2 d-none d-md-inline-block" href="#">Features</a>
+            <a class="py-2 d-none d-md-inline-block" href="#">About Us</a>
+            
             <a class="py-2 d-none d-md-inline-block" href="{% url 'contact_us' %}">Contact Us</a>
 
             <a class="py-2 d-none d-md-inline-block" href="{% url 'jobs:all' %}">Career</a>
+            <a class="py-2 d-none d-md-inline-block" href="{% url 'pragati:home' %}">Pragati</a>
 
             {% if user.is_authenticated %}
             <a class="py-2 d-none d-md-inline-block" href="{% url 'accounts:password_change' %}">Change Password</a>
             <a class="py-2 d-none d-md-inline-block" href="{% url 'accounts:logout' %}">Logout</a>
+            <a class="py-2 d-none d-md-inline-block" href="{% url 'employee:profile' %}">My Profile</a>
             {% else %}
             <a class="py-2 d-none d-md-inline-block" href="{% url 'accounts:login' %}">Login</a>
             <a class="py-2 d-none d-md-inline-block" href="{% url 'accounts:signup' %}">Sign Up</a>
